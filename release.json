@@ -1,0 +1,9 @@
+{
+  "schema": "playkeen/release-v1",
+  "version": "0.1.29",
+  "package_name": "playkeen",
+  "package_url": "https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.29/playkeen_0.1.29_all.ipk",
+  "sha256": "44d12a53dfdf70a78202760058e1a47f5522fd4ce86f5e87e2f8156adaeab3c9",
+  "release_url": "https://github.com/tommilevs/playkeen-entware/releases/tag/v0.1.29",
+  "architectures": ["all"]
+}
