@@ -1,0 +1,38 @@
+name: Refresh self-update metadata
+on:
+  schedule:
+    - cron: '47 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh release.json
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, urllib.request
+          repo = "tommilevs/playkeen-entware"
+          headers = {"Accept": "application/vnd.github+json", "User-Agent": "playkeen-release-bot"}
+          req = urllib.request.Request(f"https://api.github.com/repos/{repo}/releases?per_page=20", headers=headers)
+          releases = json.load(urllib.request.urlopen(req))
+          release = next(x for x in releases if not x["draft"] and not x["prerelease"])
+          asset = next(x for x in release["assets"] if x["name"].startswith("playkeen_") and x["name"].endswith("_all.ipk"))
+          checksum = next(x for x in release["assets"] if "sha256" in x["name"].lower())
+          checksum_req = urllib.request.Request(checksum["browser_download_url"], headers=headers)
+          sha256 = next(token for token in urllib.request.urlopen(checksum_req).read().decode().split() if len(token) == 64)
+          version = release["tag_name"].lstrip("v")
+          data = {"schema":"playkeen/release-v1","version":version,"package_name":"playkeen","package_url":asset["browser_download_url"],"sha256":sha256.lower(),"release_url":release["html_url"],"architectures":["all"]}
+          open("release.json", "w").write(json.dumps(data, indent=2) + "\n")
+          PY
+      - name: Commit metadata
+        run: |
+          git config user.name playkeen-release-bot
+          git config user.email playkeen-release-bot@users.noreply.github.com
+          git add release.json
+          git diff --cached --quiet || git commit -m "chore: refresh release metadata"
+          git push
