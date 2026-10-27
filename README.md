@@ -5,7 +5,7 @@ Public Entware packages for the closed Playkeen core. English is primary; Russia
 ## Install
 
 ```sh
-curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.1/playkeen_0.1.1_all.ipk -o /tmp/playkeen.ipk
+curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
 opkg install /tmp/playkeen.ipk
 ```
 
@@ -18,7 +18,7 @@ The package installs the POSIX CLI, WEB UI files, and an Entware init service on
 Установка:
 
 ```sh
-curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.1/playkeen_0.1.1_all.ipk -o /tmp/playkeen.ipk
+curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
 opkg install /tmp/playkeen.ipk
 ```
 
