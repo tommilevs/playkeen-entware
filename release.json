@@ -1,11 +1,11 @@
 {
   "package_name": "playkeen",
-  "package_url": "https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.40/playkeen_0.1.40_all.ipk",
+  "package_url": "https://github.com/tommilevs/unixplay-entware/releases/download/v0.1.40/playkeen_0.1.40_all.ipk",
   "schema": "playkeen/release-v1",
   "sha256": "a42208598a66eab6fc6674048ee408790c6315c9804e790aaec8fa973a4549bf",
   "architectures": [
     "all"
   ],
   "version": "0.1.40",
-  "release_url": "https://github.com/tommilevs/playkeen-entware/releases/tag/v0.1.40"
+  "release_url": "https://github.com/tommilevs/unixplay-entware/releases/tag/v0.1.40"
 }

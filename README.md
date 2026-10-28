@@ -1,11 +1,11 @@
-# Playkeen Entware distribution
+# Unixplay Entware distribution
 
-Public Entware packages for the closed Playkeen core. English is primary; Russian follows below.
+Public Entware packages for the closed Unixplay core. English is primary; Russian follows below.
 
 ## Install
 
 ```sh
-curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
+curl -LfsS https://github.com/tommilevs/unixplay-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
 opkg install /tmp/playkeen.ipk
 ```
 
@@ -13,12 +13,12 @@ The package installs the POSIX CLI, WEB UI files, and an Entware init service on
 
 ## Русский
 
-Публичные Entware-пакеты для закрытого ядра Playkeen.
+Публичные Entware-пакеты для закрытого ядра Unixplay.
 
 Установка:
 
 ```sh
-curl -LfsS https://github.com/tommilevs/playkeen-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
+curl -LfsS https://github.com/tommilevs/unixplay-entware/releases/download/v0.1.4/playkeen_0.1.4_all.ipk -o /tmp/playkeen.ipk
 opkg install /tmp/playkeen.ipk
 ```
 

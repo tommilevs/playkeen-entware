@@ -16,7 +16,7 @@ jobs:
         run: |
           python - <<'PY'
           import hashlib, json, os, urllib.request
-          repo = "tommilevs/playkeen-entware"
+          repo = "tommilevs/unixplay-entware"
           headers = {"Accept": "application/vnd.github+json", "User-Agent": "playkeen-release-bot"}
           req = urllib.request.Request(f"https://api.github.com/repos/{repo}/releases?per_page=20", headers=headers)
           releases = json.load(urllib.request.urlopen(req))
